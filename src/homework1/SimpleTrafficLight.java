@@ -16,6 +16,12 @@ public class SimpleTrafficLight implements TrafficLight {
         colour=colourSequence.get(0).getColour();
     }
 
+    public SimpleTrafficLight(List<SequenceNode> colourSequence){
+        if(colourSequence.isEmpty()) throw new IllegalArgumentException("ColourSequence must not be empty.");
+        this.colourSequence=colourSequence;
+        colour=colourSequence.get(0).getColour();
+    }
+
     public void runFor(int endTime) {
         if(endTime<0)
             throw new IllegalArgumentException("Only positive endTime numbers are allowed in SimpleTrafficLight.runFor().");

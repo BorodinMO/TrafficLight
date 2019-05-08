@@ -1,14 +1,18 @@
 package homework1;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Homework1 {
     public static void main(String[] args) {
-        SimpleTrafficLight simpleTrafficLight = new SimpleTrafficLight();
+        List<SequenceNode> colourSequence = new ArrayList<>();
 
-        simpleTrafficLight.clearSequence();
-        simpleTrafficLight.addSequenceElement(LightColour.RED, 2);
-        simpleTrafficLight.addSequenceElement(LightColour.YELLOW, 1);
-        simpleTrafficLight.addSequenceElement(LightColour.GREEN, 3);
-        simpleTrafficLight.addSequenceElement(LightColour.YELLOW, 1);
+        colourSequence.add(new SequenceNode(LightColour.RED, 2));
+        colourSequence.add(new SequenceNode(LightColour.YELLOW, 1));
+        colourSequence.add(new SequenceNode(LightColour.GREEN, 3));
+        colourSequence.add(new SequenceNode(LightColour.YELLOW, 1));
+
+        SimpleTrafficLight simpleTrafficLight = new SimpleTrafficLight(colourSequence);
 
         Runnable trafficLightRunner = new TrafficLightRunner(simpleTrafficLight);
         trafficLightRunner.run();
