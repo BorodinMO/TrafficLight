@@ -17,6 +17,8 @@ public class SimpleTrafficLight implements TrafficLight {
     }
 
     public void runFor(int endTime) {
+        if(endTime<0)
+            throw new IllegalArgumentException("Only positive endTime numbers are allowed in SimpleTrafficLight.runFor().");
         int sequenceDuration=getSequenceDuration();
 
         for (int time = 0; time <= endTime; time++) {
@@ -38,6 +40,8 @@ public class SimpleTrafficLight implements TrafficLight {
     }
 
     public void addSequenceElement(LightColour colour, int time) {
+        if(time<=0)
+            throw new IllegalArgumentException("Only positive time numbers are allowed in SimpleTrafficLight.addSequenceElement().");
         SequenceNode node = new SequenceNode(colour, time);
         this.colourSequence.add(node);
     }

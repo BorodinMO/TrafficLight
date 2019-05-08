@@ -26,6 +26,8 @@ public class SequenceNode {
     }
 
     public void setDuration(int duration) {
+        if(duration<=0)
+            throw new IllegalArgumentException("Only positive duration numbers are allowed in SequenceNode.setDuration().");
         this.duration = duration;
     }
 }

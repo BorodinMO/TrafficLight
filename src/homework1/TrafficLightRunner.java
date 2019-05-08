@@ -35,8 +35,12 @@ public class TrafficLightRunner implements Runnable {
                 System.out.println("Wrong imput. Please try again. To exit type 'exit'.");
                 continue;
             }
-
-            trafficLight.runFor(time);
+            try {
+                trafficLight.runFor(time);
+            } catch (IllegalArgumentException e){
+                System.out.println(e.getMessage());
+                System.out.println("Whoops! Looks like something went wrong. Let's try again.");
+            }
             System.out.println("Light at " + time + " minute is " + trafficLight.getColour());
         }
 
