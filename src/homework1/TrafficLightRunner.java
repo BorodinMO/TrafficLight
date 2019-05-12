@@ -40,6 +40,7 @@ public class TrafficLightRunner implements Runnable {
             } catch (IllegalArgumentException e){
                 System.out.println(e.getMessage());
                 System.out.println("Whoops! Looks like something went wrong. Let's try again.");
+                continue;
             }
             System.out.println("Light at " + time + " minute is " + trafficLight.getColour());
         }
