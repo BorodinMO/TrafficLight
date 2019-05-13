@@ -4,12 +4,12 @@ public class SequenceNode {
     private LightColour colour;
     private int duration;
 
-    public SequenceNode(LightColour colour, int duration){
-        this.colour=colour;
-        this.duration=duration;
+    public SequenceNode(LightColour colour, int duration) {
+        this.colour = colour;
+        this.duration = duration;
     }
 
-    public SequenceNode(){
+    public SequenceNode() {
 
     }
 
@@ -26,7 +26,7 @@ public class SequenceNode {
     }
 
     public void setDuration(int duration) {
-        if(duration<=0)
+        if (duration <= 0)
             throw new IllegalArgumentException("Only positive duration numbers are allowed in SequenceNode.setDuration().");
         this.duration = duration;
     }

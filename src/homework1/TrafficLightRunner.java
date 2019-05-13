@@ -15,7 +15,6 @@ public class TrafficLightRunner implements Runnable {
         this(trafficLight, new Scanner(System.in));
     }
 
-
     @Override
     public void run() {
         System.out.println("Welcome to TrafficLight.");
@@ -25,7 +24,7 @@ public class TrafficLightRunner implements Runnable {
             System.out.println("Enter minute:");
             String userInput = scanner.nextLine();
 
-            if (userInput.equals("exit")){
+            if (userInput.equals("exit")) {
                 return;
             }
             int time;
@@ -39,13 +38,12 @@ public class TrafficLightRunner implements Runnable {
             }
             try {
                 trafficLight.runFor(time);
-            } catch (IllegalArgumentException e){
+            } catch (IllegalArgumentException e) {
                 System.out.println(e.getMessage());
                 System.out.println("Whoops! Looks like something went wrong. Let's try again.");
                 continue;
             }
             System.out.println("Light at " + time + " minute is " + trafficLight.getColour());
         }
-
     }
 }
