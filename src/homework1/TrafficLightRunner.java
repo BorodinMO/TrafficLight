@@ -26,7 +26,6 @@ public class TrafficLightRunner implements Runnable {
             String userInput = scanner.nextLine();
 
             if (userInput.equals("exit")){
-                scanner.close();
                 return;
             }
             int time;
