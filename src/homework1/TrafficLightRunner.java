@@ -25,7 +25,10 @@ public class TrafficLightRunner implements Runnable {
             System.out.println("Enter minute:");
             String userInput = scanner.nextLine();
 
-            if (userInput.equals("exit")) return;
+            if (userInput.equals("exit")){
+                scanner.close();
+                return;
+            }
             int time;
 
             try {
